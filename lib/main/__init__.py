@@ -19,7 +19,7 @@ class LoginPage:
       password_input.send_keys(password)
       login_button = self.browser.find_element(By.XPATH, "//button[@type='submit']")
       login_button.click()
-      sleep(5)
+      sleep(random.randint(3, 6))
 
 class HomePage: # NOTE: MAKE SURE TO ADD TRY AND EXCEPTION CASES (error handling) 
   def __init__(self, browser):
@@ -32,11 +32,11 @@ class HomePage: # NOTE: MAKE SURE TO ADD TRY AND EXCEPTION CASES (error handling
   def skip_reminders(self):
       self.browser.find_element(By.XPATH, "//button[text()='Not Now']").click()
       self.browser.find_element(By.XPATH, "//button[text()='Not Now']").click()
-      sleep(1)
+      sleep(random.randint(2, 4))
 
   def go_to_profile_page(self, username):
       self.browser.find_element(By.XPATH, f"//a[@href='/{username}/']").click()
-      sleep(1)
+      sleep(random.randint(2, 4))
 
 def read_config():
   print("Reading Config...")
@@ -74,6 +74,6 @@ def run(version):
   home_page.skip_reminders()
   home_page.go_to_profile_page(username)
 
-  browser.close()
+  # browser.close()
 
     
