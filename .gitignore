@@ -1,3 +1,4 @@
 geckodriver.log
 lib/data/__pycache__
 lib/main/__pycache__
+config.json
