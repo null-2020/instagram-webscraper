@@ -46,8 +46,8 @@ def read_config():
   
   config = json.load(f)
 
-  return config
   f.close()
+  return config
 
 
 def run(version):
